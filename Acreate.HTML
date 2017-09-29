@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Website</h4>
+        </div>
+
+        <div class="modal-body">
+<form>
+          <div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Website Name</label><div class="col-md-6"><input class="form-control" id="titleUser" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Platform</label><div class="col-md-6">
+<button type="button" id="p1">1</button>
+<button type="button" id="p2">2</button>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Primary Color</label><div class="col-xs-6"><input type="color" id="colorOne" value="#ffffff" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Secondary Color</label><div class="col-xs-6"><input type="color" id="colorTwo" value="#ffffff" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Another Color</label><div class="col-xs-6"><input type="color" id="colorThree" value="#ffffff" class="form-control" /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Font</label><div class="col-xs-6"><select class="form-control"></select></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Font Color</label><div class="col-xs-6"><input id="colorFour" value="#ffffff" type="color" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<div class="col-xs-12">
+	<button type="submit" class="btn btn-primary" type="button" onclick="save()" data-dismiss="modal">Create</button> &#160
+        <button type="reset" class="btn btn-warning">Reset</button> &#160
+ 	<button type="button" class="btn btn-danger" id="btnCancel">Cancel</button>
+</div>
+</div>
+</form>
+<div class="col-xs-12"> &#160 </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        </div>
+    </div>
+  </div>
+</div>
+<!--Start of platform one-->
+<div id="platformO">
+<div class="col-xs-12 header"><h1 class="headTitle" id="titleO"></h1></div>
+<div class="col-xs-2 header"></div>
+<div class="col-xs-8 info"></div>
+<div class="col-xs-2 header"></div>
+<div class="col-xs-2 space"></div>
+<div class="col-xs-8 content">
+<div id="textUser">
+<textarea style="width:100%;" rows="20" id="text"></textarea>
+<button class="btn btn-primary" id="textSave">Save</button>
+</div>
+<div id="finalText">
+<p class="headTitle" id="savedText"></p>
+</div>
+</div>
+<div class="col-xs-2 space"></div>
+</div>
+<!--Start of platform two-->
+<div id="platformT">
+<div class="col-xs-12 header"><h1 id="titleT" class="headTitle"></h1></div>
+<div class="col-xs-2 space"></div>
+<div class="col-xs-8 content">
+<div id="textUserT">
+<textarea style="width:100%;" rows="20" id="textT"></textarea>
+<button class="btn btn-primary" id="textSaveT">Save</button>
+</div>
+<div id="finalTextT">
+<p class="headTitle" id="savedTextT"></p>
+</div>
+</div>
+<div class="col-xs-2 space"></div>
+</div>
+</body>
+<style>
+.info {
+   height: 100px;
+}
+.header {
+   height: 100px;
+}
+.space {
+    height: 100vh;
+}
+.content {
+    height: 100vh;
+}
+.footer {
+    height: 10px;
+}
+.divO {
+
+}
+.divT {
+
+}
+.divH {
+
+}
+.headTitle {
+
+}
+</style>
+<script>
+$("#platformO").hide();
+$("#platformT").hide();
+$("#p1").click(function(){
+    $("#platformO").show();
+    $("#platformT").hide();
+});
+$("#p2").click(function(){
+    $("#platformT").show();
+    $("#platformO").hide();
+});
+$("#textSave").click(function(){
+    var y = document.getElementById("text").value;
+    document.getElementById("savedText").innerHTML = y;
+    $("#textFinal").show();
+    $("#textUser").hide();
+});
+$("#textSaveT").click(function(){
+    var y = document.getElementById("textT").value;
+    document.getElementById("savedTextT").innerHTML = y;
+    $("#textFinalT").show();
+    $("#textUserT").hide();
+});
+$('#btnCancel').click(function() {
+  window.location='file:///E:/WEBDOCOM/Alternator/Ahome.HTML';
+});
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+})
+$(window).on('load',function(){
+	$("#textFinal").hide();
+        $('#myModal').modal('show');
+});
+function save() {
+var t = document.getElementById("titleUser").value;
+document.getElementById("titleO").innerHTML = t;
+document.getElementById("titleT").innerHTML = t;
+
+var co = document.getElementById("colorOne").value;
+var ct = document.getElementById("colorTwo").value;
+var ch = document.getElementById("colorThree").value;
+var cf = document.getElementById("colorFour").value;
+console.log(co);
+$('.header').css('background-color',co);
+$('.content').css('background-color',ct);
+$('.space').css('background-color',ch);
+$('.info').css('background-color',ct);
+$('.headTitle').css('color',cf);
+}
+</script>
+</body>
+</html>
