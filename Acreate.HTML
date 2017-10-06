@@ -128,7 +128,7 @@
 }
 </style>
 <script>
-$("#platformO").hide();
+$("#platformO").show();
 $("#platformT").hide();
 $("#p1").click(function(){
     $("#platformO").show();
@@ -170,6 +170,7 @@ var ct = document.getElementById("colorTwo").value;
 var ch = document.getElementById("colorThree").value;
 var cf = document.getElementById("colorFour").value;
 console.log(co);
+document.body.style.background = co;
 $('.header').css('background-color',co);
 $('.content').css('background-color',ct);
 $('.space').css('background-color',ch);
