@@ -24,8 +24,9 @@
 <div class="col-xs-12"> &#160 </div>
 <div class="form-group">
 <label class="control-label col-xs-4">Platform</label><div class="col-md-6">
-<button type="button" id="p1">1</button>
-<button type="button" id="p2">2</button>
+<button type="button" id="p1">Classic</button>
+<button type="button" id="p2">Regular</button>
+<button type="button" id="p3">Original</button>
 </div>
 <div class="col-xs-12"> &#160 </div>
 <div class="form-group">
@@ -82,6 +83,7 @@
 </div>
 <div class="col-xs-2 space"></div>
 </div>
+
 <!--Start of platform two-->
 <div id="platformT">
 <div class="col-xs-12 header"><h1 id="titleT" class="headTitle"></h1></div>
@@ -97,6 +99,22 @@
 </div>
 <div class="col-xs-2 space"></div>
 </div>
+
+<!--Start of Platform three-->
+<div id="platformH">
+<div class="col-xs-2 space"></div>
+<div class="col-xs-10 header"><h1 class="headTitle" id="titleH"></h1></div>
+<div class="col-xs-10 content">
+<div id="textUserH">
+<textarea style="width:100%;" rows="20" id="textH"></textarea>
+<button class="btn btn-primary" id="textSaveH">Save</button>
+</div>
+<div id="finalTextH">
+<p class="headTitle" id="savedTextH"></p>
+</div>
+</div>
+</div>
+
 </body>
 <style>
 .info {
@@ -136,13 +154,21 @@
 <script>
 $("#platformO").show();
 $("#platformT").hide();
+$("#platformH").hide();
 $("#p1").click(function(){
     $("#platformO").show();
     $("#platformT").hide();
+    $("#platformH").hide();
 });
 $("#p2").click(function(){
     $("#platformT").show();
     $("#platformO").hide();
+    $("#platformH").hide();
+});
+$("#p3").click(function(){
+    $("#platformH").show();
+    $("#platformO").hide();
+    $("#platformT").hide();
 });
 $("#textSave").click(function(){
     var y = document.getElementById("text").value;
@@ -156,6 +182,12 @@ $("#textSaveT").click(function(){
     $("#textFinalT").show();
     $("#textUserT").hide();
 });
+$("#textSaveH").click(function(){
+    var y = document.getElementById("textH").value;
+    document.getElementById("savedTextH").innerHTML = y;
+    $("#textFinalH").show();
+    $("#textUserH").hide();
+});
 $('#btnCancel').click(function() {
   window.location='Ahome.HTML';
 });
@@ -163,13 +195,13 @@ $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').focus()
 })
 $(window).on('load',function(){
-	$("#textFinal").hide();
         $('#myModal').modal('show');
 });
 function save() {
 var t = document.getElementById("titleUser").value;
 document.getElementById("titleO").innerHTML = t;
 document.getElementById("titleT").innerHTML = t;
+document.getElementById("titleH").innerHTML = t;
 
 var co = document.getElementById("colorOne").value;
 var ct = document.getElementById("colorTwo").value;
