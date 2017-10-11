@@ -29,7 +29,7 @@
 <button class="btn btn-info btnSize" type="button" id="p3">Original</button>
 <button class="btn btn-info btnSize" type="button" id="p4">Classic</button>
 <button class="btn btn-info btnSize" type="button" id="p5">Normal</button>
-<button class="btn btn-info btnSize" type="button" id="p6">Traditional</button>
+<button class="btn btn-info btnSize" type="button" id="p6">Standard</button>
 </div>
 <div class="col-xs-12"> &#160 </div>
 <div class="form-group">
@@ -149,6 +149,20 @@
 </div>
 </div>
 
+<!--Start of Platform six-->
+<div id="platformS">
+<div class="col-md-2 header"><h1 class="headTitle" id="titleS"></h1></div>
+<div class="col-md-10 content">
+<div id="textUserS">
+<textarea style="width:100%;" rows="20" id="textS"></textarea>
+<button class="btn btn-primary" id="textSaveS">Save</button>
+</div>
+<div id="finalTextS">
+<p class="headTitle" id="savedTextS"></p>
+</div>
+</div>
+</div>
+
 </body>
 <style>
 .btnSize {
@@ -201,12 +215,14 @@ $("#platformT").hide();
 $("#platformH").hide();
 $("#platformF").hide();
 $("#platformV").hide();
+$("#platformS").hide();
 $("#p1").click(function(){
     $("#platformO").show();
     $("#platformT").hide();
     $("#platformH").hide();
     $("#platformF").hide();
     $("#platformV").hide();
+    $("#platformS").hide();
 });
 $("#p2").click(function(){
     $("#platformT").show();
@@ -214,6 +230,7 @@ $("#p2").click(function(){
     $("#platformH").hide();
     $("#platformF").hide();
     $("#platformV").hide();
+    $("#platformS").hide();
 });
 $("#p3").click(function(){
     $("#platformH").show();
@@ -221,6 +238,7 @@ $("#p3").click(function(){
     $("#platformT").hide();
     $("#platformF").hide();
     $("#platformV").hide();
+    $("#platformS").hide();
 });
 $("#p4").click(function(){
     $("#platformH").hide();
@@ -228,6 +246,7 @@ $("#p4").click(function(){
     $("#platformT").hide();
     $("#platformF").show();
     $("#platformV").hide();
+    $("#platformS").hide();
 });
 $("#p5").click(function(){
     $("#platformH").hide();
@@ -235,6 +254,15 @@ $("#p5").click(function(){
     $("#platformT").hide();
     $("#platformF").hide();
     $("#platformV").show();
+    $("#platformS").hide();
+});
+$("#p6").click(function(){
+    $("#platformH").hide();
+    $("#platformO").hide();
+    $("#platformT").hide();
+    $("#platformF").hide();
+    $("#platformV").hide();
+    $("#platformS").show();
 });
 $("#textSave").click(function(){
     var y = document.getElementById("text").value;
@@ -266,6 +294,12 @@ $("#textSaveV").click(function(){
     $("#textFinalV").show();
     $("#textUserV").hide();
 });
+$("#textSaveS").click(function(){
+    var y = document.getElementById("textS").value;
+    document.getElementById("savedTextS").innerHTML = y;
+    $("#textFinalS").show();
+    $("#textUserS").hide();
+});
 $('#btnCancel').click(function() {
   window.location='Ahome.HTML';
 });
@@ -282,6 +316,7 @@ document.getElementById("titleT").innerHTML = t;
 document.getElementById("titleH").innerHTML = t;
 document.getElementById("titleF").innerHTML = t;
 document.getElementById("titleV").innerHTML = t;
+document.getElementById("titleS").innerHTML = t;
 
 var co = document.getElementById("colorOne").value;
 var ct = document.getElementById("colorTwo").value;
