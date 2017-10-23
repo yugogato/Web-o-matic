@@ -13,14 +13,15 @@
 </div>
 <div class="col-xs-2">
 <button class="btn btn-info" id="b1">Create Website</button>
-<button class="btn btn-info" id="b2">Sponsers</button>
-<button class="btn btn-info" id="b3">About</button>
+<button class="btn btn-info" type="button" id="b2">Sponsers</button>
+<button class="btn btn-info" type="button" id="b3">About</button>
 </div>
 </div>
 </div>
 <div class="col-xs-2 space">
 </div>
 <div class="col-xs-8 content">
+
 <div id="create">
 <h2 class="cenTex">Create Page</h2>
 <div class="col-xs-12"> &#160 </div>
@@ -28,9 +29,36 @@
 <div class="col-md-12 cenTex"><button type="button" class="btn btn-primary" id="btnCan">Create</button></div>
 </div>
 </div>
+
+<div id="sponser">
+<h2 class="cenTex">Sponsers</h2>
+<div class="col-xs-12"> &#160 </div>
+<div class="cenTex">
+<img src="vermutenWTFABT.png" class="pic">
+<img src="vermutenmon.PNG" class="pic">
+<img src="vermutent.png" class="pic">
+<img src="vermut.PNG" class="pic">
+<img src="vermutenmode.PNG" class="pic">
+<img src="vermutentr.png" class="pic">
+<img src="poke.fw.png" class="pic">
+<img src="propaganda.png" class="pic">
+<img src="VDPRNK.png" class="pic">
+</div>
+</div>
+
+<div id="about">
+<h2 class="cenTex">About</h2>
+<div class="col-xs-12"> &#160 </div>
+<p class="cenTex">Webdocom is a international subisdary of MINWARE by Vermutenkom GmbH, a product of Vermutenkom GmbH. Vermutenkom GmbH hold all copyrites and restrictions on the use of the name Webdocom logo and software. Vermutenkom GmbH also has total authority over MINWARE a product of Vermutenkom GmbH and MIN-NET a product of Vermutenkom GmbH. Vermutenkom GmbH is the only authority allowed to aprove use of these products. The Vermutenkom GmbH logo and name are trademarks of Vermutenkom GmbH and can not be used by anyone that isn't Vermutenkom GmbH. Vermutenkom GmbH hopes you enjoy your product Webdocom in MIN-NET by MINWARE a product of Vermutenkom GmbH. Dankie!</p>
+</div>
+
 </div> 
 </body>
 <style>
+.pic {
+   width:150px;
+   height:150px;
+}
 .cenTex {
    text-align: center;
 }
@@ -54,6 +82,9 @@
 }
 </style>
 <script>
+$("#create").show();
+$("#sponser").hide();
+$("#about").hide();
 $('#btnCan').click(function() {
   window.location='Acreate.HTML';
 });
@@ -61,13 +92,19 @@ $(window).on('load',function(){
 	
 });
 $('#b1').click(function() {
-  window.location='Acreate.HTML';
+$("#create").show();
+$("#sponser").hide();
+$("#about").hide();
 });
 $('#b2').click(function() {
-  window.location='Acreate.HTML';
+$("#create").hide();
+$("#sponser").show();
+$("#about").hide();
 });
 $('#b3').click(function() {
-  window.location='Acreate.HTML';
+$("#create").hide();
+$("#sponser").hide();
+$("#about").show();
 });
 </script>
 </html>
