@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+
+  <script src="https://rawgit.com/adrotec/knockout-file-bindings/master/knockout-file-bindings.js"></script>
+
+
 </head>
 <body>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -93,6 +98,18 @@
 <div id="finalText">
 <p class="headTitle" id="savedText"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 <div class="col-xs-2 space"></div>
 </div>
@@ -109,6 +126,18 @@
 <div id="finalTextT">
 <p class="headTitle" id="savedTextT"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 <div class="col-xs-2 space"></div>
 </div>
@@ -125,6 +154,18 @@
 <div id="finalTextH">
 <p class="headTitle" id="savedTextH"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -140,6 +181,18 @@
 <div id="finalTextF">
 <p class="headTitle" id="savedTextF"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 <div class="col-md-1 spacealt"></div>
 <div class="col-md-12 header"></div>
@@ -156,6 +209,18 @@
 <div id="finalTextV">
 <p class="headTitle" id="savedTextV"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -170,6 +235,18 @@
 <div id="finalTextS">
 <p class="headTitle" id="savedTextS"></p>
 </div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -215,6 +292,11 @@
 }
 </style>
 <script>
+var viewModel = {};
+viewModel.fileData = ko.observable({
+  dataURL: ko.observable()
+});
+ko.applyBindings(viewModel);
 $("#platformO").show();
 $("#platformT").hide();
 $("#platformH").hide();
@@ -306,7 +388,7 @@ $("#textSaveS").click(function(){
     $("#textUserS").hide();
 });
 $('#btnCancel').click(function() {
-  window.location='Ahome.HTML';
+  window.location='index.html';
 });
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').focus()
